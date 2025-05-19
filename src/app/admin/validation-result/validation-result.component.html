@@ -1,0 +1,48 @@
+<div class="container">
+    <h3>Valid users</h3>
+    <table id="validUsers">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Acount</th>
+                <th>Contact</th>
+                <th>Status</th>
+                <th>KYC status</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let vu of validUsers">
+                <td>{{vu.name}}</td>
+                <td>{{vu.account}}</td>
+                <td>{{vu.contact}}</td>
+                <td>{{vu.status}}</td>
+                <td>{{vu.kycStatus}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="submit" (click)="onSubmit()">Update</button>
+    <button class="cancel" (click)="onSubmit()">Cancel</button>
+
+
+    <h3>Invalid users</h3>
+    <table id="validUsers">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Acount</th>
+                <th>Contact</th>
+                <th>Status</th>
+                <th>KYC status</th>
+            </tr>
+        </thead>
+        <tbody id="invalidUsers">
+            <tr *ngFor="let vu of invalidUsers">
+                <td>{{vu.name}}</td>
+                <td>{{vu.account}}</td>
+                <td>{{vu.contact}}</td>
+                <td>{{vu.status}}</td>
+                <td>{{vu.kycStatus}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

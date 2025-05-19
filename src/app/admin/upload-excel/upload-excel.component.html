@@ -1,0 +1,15 @@
+<form #fileUploadForm="ngForm" (ngSubmit)="onValidate(fileUploadForm)">
+    <input class="input-field" type="file" (change)="onFileSelected($event)" ngModelName="file"
+        accept="application/vnd.ms-excel" required>
+    <!-- <div *ngIf="!fileUploadForm.controls['file'].valid && fileUploadForm.controls['file'].touched"> Please select a file </div> -->
+    <button class="submit" type="submit" [disabled]="!selectedFile"> Validate</button>
+</form>
+
+<nz-progress [nzPercent]="percent" class="progressBar" *ngIf="showProgress"></nz-progress>
+
+<nz-card style="width:300px;" nzTitle="Excel file validated" *ngIf="fileValidated && selectedFile">
+    <p>Total User found : {{40000}}</p>
+    <p>Users valid : {{38000}}</p>
+    <p>Users not found : {{2000}}</p>
+    <button class="submit" type="button" (click)="showPreview()"> Preview </button>
+</nz-card>
